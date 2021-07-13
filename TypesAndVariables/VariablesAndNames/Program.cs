@@ -18,14 +18,14 @@ namespace VariablesAndNames
 
 
 
-            cars = 100; //cars
-            seatsInACar = 4; //seats in a car
-            drivers = 28; // drivers
-            passengers = 90; // passengers
-            carsNotDriven = cars - drivers;  // free cars
-            carsDriven =  drivers ; // cars driven at the moment
-            carpoolCapacity = cars * seatsInACar; // carpool capacity
-            averagePassengersPerCar = (carsDriven * seatsInACar) / passengers;  // average passengers per car
+            cars = 100; 
+            seatsInACar = 4;
+            drivers = 28;
+            passengers = 90;
+            carsNotDriven = cars - drivers;
+            carsDriven =  drivers ;
+            carpoolCapacity = cars * seatsInACar;
+            averagePassengersPerCar = (carsDriven * seatsInACar) / passengers;
 
             Console.WriteLine($"There are {cars} cars available.");
             Console.WriteLine("There are only " + drivers + " drivers available.");
