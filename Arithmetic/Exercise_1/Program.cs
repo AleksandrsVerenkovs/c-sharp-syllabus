@@ -6,13 +6,13 @@ namespace Exercise_1
     {
         static void Main(string[] args)
         {
-            int first;
-            int second;
+            int First;
+            int Second;
             Console.WriteLine("Enter first INTEGER nr.");
-            first = int.Parse(Console.ReadLine());
+            First = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter second INTEGER nr.");
-            second = int.Parse(Console.ReadLine());
-            Console.WriteLine(Compare(first, second));
+            Second = int.Parse(Console.ReadLine());
+            Console.WriteLine(Compare(First, Second));
             Console.ReadKey();
         }
         public static bool Compare(int num1, int num2)
