@@ -27,10 +27,10 @@ namespace Exercise_6
                 Console.WriteLine($"Total at the moment: {Sum}");
                 Console.WriteLine("Do you wish to end process? [y/n]");
                 breakLoop = Console.ReadKey(false).Key;
-                    if(breakLoop == ConsoleKey.Y)
-                    {
-                        ExitLoop = true;
-                    }
+                if(breakLoop == ConsoleKey.Y)
+                {
+                    ExitLoop = true;
+                }
                 Console.WriteLine();
                 }
             }
