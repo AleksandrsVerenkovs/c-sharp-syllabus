@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenBillion", "TenBillion\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDayInWord", "PrintDayInWord\PrintDayInWord.csproj", "{881A97D5-C625-4AA2-A63F-224E39AE533B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneKeyPad", "PhoneKeyPad\PhoneKeyPad.csproj", "{08A07AFA-5D19-46D6-B9A7-94A6E989C30D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{881A97D5-C625-4AA2-A63F-224E39AE533B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{881A97D5-C625-4AA2-A63F-224E39AE533B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{881A97D5-C625-4AA2-A63F-224E39AE533B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A07AFA-5D19-46D6-B9A7-94A6E989C30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A07AFA-5D19-46D6-B9A7-94A6E989C30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A07AFA-5D19-46D6-B9A7-94A6E989C30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A07AFA-5D19-46D6-B9A7-94A6E989C30D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
