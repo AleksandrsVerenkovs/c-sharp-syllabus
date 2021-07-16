@@ -9,71 +9,13 @@ namespace TenBillion
         {
             Console.WriteLine("Input an integer number less than ten billion: ");
 
-            var input = Console.ReadLine();
+            var input = long.Parse(Console.ReadLine());
+            var inputLength = input.ToString().ToCharArray().Length;
 
-            /*
-            todo - check if Long
-            if (?) 
-            {
-                //todo - check if n is less than zero
-                if (?) 
-                {
-                    n *= -1;
-                }
-
-                fixme
-                if (?) 
-                {
-                    Console.WriteLine("Number is greater or equals 10,000,000,000!");
-                } 
-                else 
-                {
-                    int digits = 1;
-                    if (?) 
-                    {
-                        digits = 2;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 3;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 4;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 5;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 6;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 7;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 8;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 9;
-                    } 
-                    else if (?) 
-                    {
-                        digits = 10;
-                    }
-
-                    Console.WriteLine("Number of digits in the number: " + digits);
-                }
-            } 
-            else 
-            {
-                Console.WriteLine("The number is not a long");
-            }
-            */
+            if(input <= 0 ) Console.WriteLine("That's not possitive integer.");
+            else Console.WriteLine($"This number consists of: {inputLength} digits.");
+            Console.ReadKey();
+        
         }
     }
 }
