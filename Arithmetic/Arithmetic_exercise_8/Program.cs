@@ -9,10 +9,10 @@ namespace Arithmetic_exercise_8
         public class Employee
         {
             public string Name;
-            public double BasePay;
+            public decimal BasePay;
             public int WorkedHours;
 
-            public Employee(string name, double basePay, int workedHours)
+            public Employee(string name, decimal basePay, int workedHours)
             {
                 Name = name;
                 BasePay = basePay;
@@ -23,9 +23,9 @@ namespace Arithmetic_exercise_8
         {
 
             List<Employee> Employees = new List<Employee>();
-            Employees.Add(new Employee("Employee 1", 7.50, 35));
-            Employees.Add(new Employee("Employee 2", 8.20, 47));
-            Employees.Add(new Employee("Employee 3", 10.00, 73));
+            Employees.Add(new Employee("Employee 1", (decimal)7.50, 35));
+            Employees.Add(new Employee("Employee 2", (decimal)8.20, 47));
+            Employees.Add(new Employee("Employee 3", (decimal)10.00, 73));
 
             foreach(var person in Employees)
             {
@@ -33,14 +33,14 @@ namespace Arithmetic_exercise_8
             }
             Console.ReadKey();
         } 
-        public static string Salary(int hours,double hourlyRate)
+        public static string Salary(int hours,decimal hourlyRate)
         {
-            double overtimeHourlyRate = 1.5 * hourlyRate;
-            double baseSalary = hours * hourlyRate;
-            double overtimePay = (hours - 40) * overtimeHourlyRate;
+            decimal overtimeHourlyRate = (decimal)1.5 * hourlyRate;
+            decimal baseSalary = hours * hourlyRate;
+            decimal overtimePay = (hours - 40) * overtimeHourlyRate;
             int maxSalary = 720;
 
-            if (hourlyRate < 8) return $"No, no. Hourly rate {hourlyRate} is too low!";
+            if (hourlyRate < 8) return $"No, no. Hourly rate {hourlyRate}h is too low!";
             if (hours > 60) return $"You salary is {maxSalary}$. Sorry, but not more than 60h work time.";
             if (hours > 40 && hours <= 60) return $"You salary is {baseSalary + overtimePay}$.";
             return $"You salary is {baseSalary}$ .";
