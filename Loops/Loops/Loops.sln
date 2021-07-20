@@ -15,13 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise5", "Exercise_5\Exe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{03F15CB3-E0A3-4EEA-AE4E-918300F60447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piglet", "Piglet\Piglet.csproj", "{ABEFB70C-1CEF-4C9A-9EE6-1A22D64622F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Piglet", "Piglet\Piglet.csproj", "{ABEFB70C-1CEF-4C9A-9EE6-1A22D64622F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsciiFigure", "AsciiFigure\AsciiFigure.csproj", "{D3ACF4A1-8930-411E-9A27-1C6B9D907BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiFigure", "AsciiFigure\AsciiFigure.csproj", "{D3ACF4A1-8930-411E-9A27-1C6B9D907BDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollTwoDice", "RollTwoDice\RollTwoDice.csproj", "{B4DBD288-ACDF-4579-A630-5159BF674219}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RollTwoDice", "RollTwoDice\RollTwoDice.csproj", "{B4DBD288-ACDF-4579-A630-5159BF674219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberSquare", "NumberSquare\NumberSquare.csproj", "{843DA66D-FDB6-42A2-88AF-287486FF3E53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberSquare", "NumberSquare\NumberSquare.csproj", "{843DA66D-FDB6-42A2-88AF-287486FF3E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shit", "shit\shit.csproj", "{B3A4EFBC-FDBC-4DEA-9670-3DC54DCC2D63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{843DA66D-FDB6-42A2-88AF-287486FF3E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{843DA66D-FDB6-42A2-88AF-287486FF3E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{843DA66D-FDB6-42A2-88AF-287486FF3E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A4EFBC-FDBC-4DEA-9670-3DC54DCC2D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A4EFBC-FDBC-4DEA-9670-3DC54DCC2D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A4EFBC-FDBC-4DEA-9670-3DC54DCC2D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A4EFBC-FDBC-4DEA-9670-3DC54DCC2D63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
