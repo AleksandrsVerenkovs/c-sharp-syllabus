@@ -18,10 +18,6 @@ namespace NumberSquare
             var increm = 0;
             for(int i = 0; i < maxVal; i++)
             {
-                //if (i + increm > maxval)
-                //{
-                //    increm = 0;
-                //}
                 baseNum[i] = minVal + increm;
                 increm++;
             }
@@ -29,11 +25,13 @@ namespace NumberSquare
             var plusOne = 0;
             for ( int i = 1; i<= maxVal; i++)
             {
+                var plusser = 0;
                 foreach (var num in baseNum)
                 {
                     if(num + plusOne > maxVal)
                     {
-                        Console.Write(minVal);
+                        Console.Write(minVal + plusser);
+                        plusser++;
                     }
                     else
                     {
