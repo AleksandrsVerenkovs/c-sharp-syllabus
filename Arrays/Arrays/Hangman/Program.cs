@@ -60,12 +60,13 @@ namespace Hangman
 
                 Console.WriteLine("Play again? [y/n]");
                 var response = Console.ReadKey(true);
+
                 if(response.KeyChar == 'y')
                 {
                     playAgain = playAgain == true;
                 }
             } while (playAgain);
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
