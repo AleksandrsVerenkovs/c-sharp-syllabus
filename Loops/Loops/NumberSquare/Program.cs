@@ -22,13 +22,18 @@ namespace NumberSquare
                 increm++;
             }
 
+            var aboveThree = minVal > 2 ? true : false;
             var plusOne = 0;
-            for ( int i = 1; i<= maxVal; i++)
+            for ( int i = 0; i<= maxVal-minVal; i++)
             {
                 var plusser = 0;
                 foreach (var num in baseNum)
                 {
-                    if(num + plusOne > maxVal)
+                    if (aboveThree && i == maxVal - minVal)
+                    {
+                        Console.Write(num);
+                    }
+                    else if(num + plusOne > maxVal)
                     {
                         Console.Write(minVal + plusser);
                         plusser++;
@@ -38,6 +43,7 @@ namespace NumberSquare
                     Console.Write(num + plusOne);
                     }
                 }
+               
                 Console.WriteLine();
                 plusOne++;
             }
