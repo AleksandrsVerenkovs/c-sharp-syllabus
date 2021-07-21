@@ -12,6 +12,7 @@ namespace TicTacToe
 
             Random random = new Random();
             char playerTurn = ' ';
+            int countMoves = 0;
             playerTurn = random.Next(0, 2) == 0 ? 'X' : 'O';
          
             Console.WriteLine($"{playerTurn} goes first!\n");
@@ -24,11 +25,7 @@ namespace TicTacToe
                     Console.WriteLine($"{Winner()} is winner!");
                     break;
                 }
-                if (Tie())
-                {
-                    Console.WriteLine("It's a tie!");
-                    break;
-                }
+               
                 DisplayBoard();
 
                 Console.Write($"{playerTurn}, choose your location (row, column): ");
@@ -42,7 +39,12 @@ namespace TicTacToe
                     board[inputX, inputY] = playerTurn;
                     playerTurn = playerTurn == 'X' ? 'O' : 'X';
                 }
-               
+                if (countMoves == 8 && Winner() == '-')
+                {
+                    Console.WriteLine("It's a tie!");
+                    break;
+                }
+                countMoves++;
             }
             Console.ReadLine();
         }
@@ -56,17 +58,6 @@ namespace TicTacToe
                     board[r, c] = ' ';
             }
             
-        }
-        private static bool Tie()
-        {
-            var isTie = false;
-            // fills up the board with blanks
-            for (var r = 0; r < 3; r++)
-            {
-                for (var c = 0; c < 3; c++)
-                    isTie = board[r, c] == ' ' ? false : true;
-            }
-            return isTie;
         }
 
         private static void DisplayBoard()
