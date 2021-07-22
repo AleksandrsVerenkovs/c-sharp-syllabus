@@ -17,8 +17,8 @@ namespace Exercise3
             int i;
             var foundIt = false;
             int numId = 0; ;
-            for (i = 0; i < integers.Length; i++) {
-                //todo - search for integer - break when you have found what you searched for
+            for (i = 0; i < integers.Length; i++) 
+            {
                 if(integers[i] == searchFor)
                 {
                     numId = i;
