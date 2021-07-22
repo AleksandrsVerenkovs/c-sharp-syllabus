@@ -11,7 +11,7 @@ namespace Piglet
             var stopGame = false;
 
             var roll = random.Next(1, 7);
-        Console.WriteLine("Welcome to Piglet!");
+            Console.WriteLine("Welcome to Piglet!");
             while (stopGame == false)
             {
                 Console.WriteLine($"You rolled a {roll}!");
