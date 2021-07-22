@@ -21,7 +21,6 @@ namespace NumberSquare
                 baseNum.Add(minVal + increm);
                 increm++;
             }
-            //Console.WriteLine(string.Join(' ',baseNum));
             var plusOne = 0;
             for (int i = 0; i <= maxVal - minVal; i++)
             {
