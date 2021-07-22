@@ -12,38 +12,33 @@ namespace NumberSquare
             Console.WriteLine("Max : ");
             var maxVal = int.Parse(Console.ReadLine());
 
-            var baseNum = new int[maxVal];
+            List<int> baseNum = new List<int>();
 
             //Create base number array
             var increm = 0;
-            for(int i = 0; i < maxVal; i++)
+            for(int i = 0; i <= maxVal-minVal; i++)
             {
-                baseNum[i] = minVal + increm;
+                baseNum.Add(minVal + increm);
                 increm++;
             }
-
-            var aboveThree = minVal > 2 ? true : false;
+            //Console.WriteLine(string.Join(' ',baseNum));
             var plusOne = 0;
-            for ( int i = 0; i<= maxVal-minVal; i++)
+            for (int i = 0; i <= maxVal - minVal; i++)
             {
                 var plusser = 0;
                 foreach (var num in baseNum)
                 {
-                    if (aboveThree && i == maxVal - minVal)
-                    {
-                        Console.Write(num);
-                    }
-                    else if(num + plusOne > maxVal)
+                    if (num + plusOne > maxVal)
                     {
                         Console.Write(minVal + plusser);
                         plusser++;
                     }
                     else
                     {
-                    Console.Write(num + plusOne);
+                        Console.Write(num + plusOne);
                     }
                 }
-               
+
                 Console.WriteLine();
                 plusOne++;
             }
