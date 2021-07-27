@@ -49,12 +49,12 @@ namespace Exercise7
             }
             public string Father
             {
-                get { return _Father; }
+                private get { return _Father; }
                 set { _Father = value; }
             }
             public string Mother
             {
-                get { return _Mother; }
+                private get { return _Mother; }
                 set { _Mother = value; }
             }
             public Dog(string name, string sex)
