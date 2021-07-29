@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace VideoStore
@@ -8,9 +9,6 @@ namespace VideoStore
         private string _title;
         private bool _isAvailable;
         private List<double> _rating;
-
-        //private double Rating { get; set; }
-        //private bool IsAvailable { get; set; }
 
         public Video(string title)
         {
@@ -36,7 +34,8 @@ namespace VideoStore
 
         public double AverageRating()
         {
-            return Enumerable.Range((int)_rating[0],_rating.Count()).Aggregate(0,(a,b) => a+b) / _rating.Count();
+            //Console.WriteLine(Convert.ToDouble(Enumerable.Range((int)_rating[0], _rating.Count()).Aggregate(0, (a, b) => a + b) / _rating.Count()));
+            return (_rating.Count() / _rating.Aggregate(0.0, (a, b) => a + b))*100;
         }
 
         public bool Available()
@@ -48,7 +47,7 @@ namespace VideoStore
 
         public override string ToString()
         {
-            return $"{Title} {AverageRating()} {Available()}";
+            return $"{Title} AverageRating: {AverageRating()}% IsAvailable: {Available()}";
         }
     }
 }

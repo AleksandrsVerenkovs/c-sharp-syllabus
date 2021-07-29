@@ -42,7 +42,7 @@ namespace VideoStore
                 Console.WriteLine(movie.ToString());
             }
         }
-        private Video FindMovie(string title)
+        public Video FindMovie(string title)
         {
             return _movieList.FirstOrDefault(mov => mov.Title == title);
         }
