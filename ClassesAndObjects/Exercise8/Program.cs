@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Exercise8
 {
@@ -32,13 +33,11 @@ namespace Exercise8
                 account.Withdraw(withdraw);
 
                 account.MonthlyInterest(interestRate);
-                Console.WriteLine(account.Balance*(decimal).42);
             }
-            Console.WriteLine($"Total deposited: {totalDeposit}");
-            Console.WriteLine($"Total withdrawn: {totalWithdraw}");
-            Console.WriteLine($"Interest earned: {account.Balance - balance}");
-            Console.WriteLine($"Ending balance: {Math.Floor(account.Balance)}");
-            Console.WriteLine(account.Balance - balance);
+            Console.WriteLine($"Total deposited: {totalDeposit.ToString("C",CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Total withdrawn: {totalWithdraw.ToString("C",CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Interest earned: {(account.Balance - balance).ToString("C", CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Ending balance: {account.Balance.ToString("C", CultureInfo.CurrentCulture)}");
         }
     }
 }
