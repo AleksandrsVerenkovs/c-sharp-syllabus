@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListExercise9
 {
@@ -29,10 +27,11 @@ namespace ListExercise9
                 "White",
                 "Pink"
             };
-
             Console.WriteLine(string.Join(",", secondList));
-            //TODO: Write a C# program to join two lists.
-            //...
+
+            var completeList = firstList.Concat(secondList);
+            Console.WriteLine(string.Join(",", completeList));
+            Console.ReadLine();
         }
     }
 }
