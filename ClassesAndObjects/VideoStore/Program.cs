@@ -8,7 +8,7 @@ namespace VideoStore
 {
     class Program
     {
-        private const int _countOfMovies = 3;
+        private const int _countOfMovies = 1;
         private static VideoStore _videoStore = new VideoStore();
         private static void Main(string[] args)
         {
@@ -58,7 +58,7 @@ namespace VideoStore
                 string movieName = Console.ReadLine();
 
                 Console.WriteLine("Enter rating");
-                int rating = Convert.ToInt16(Console.ReadLine());
+                double rating = Convert.ToDouble(Console.ReadLine());
 
                 _videoStore.AddVideo(movieName);
                 _videoStore.TakeUsersRating(rating, movieName);
@@ -69,6 +69,11 @@ namespace VideoStore
         {
             Console.WriteLine("Enter movie name");
             string movieName = Console.ReadLine();
+            if (!_videoStore.FindMovie(movieName).Available())
+            {
+                Console.WriteLine("Sorry, movie is already rented.");
+                return;
+            }
             _videoStore.Checkout(movieName);
         }
 
@@ -76,7 +81,12 @@ namespace VideoStore
         {
             Console.WriteLine("Enter movie name");
             string movieName = Console.ReadLine();
+            Console.WriteLine("Enter rating");
+            double rating = Convert.ToDouble(Console.ReadLine());
+
             _videoStore.ReturnVideo(movieName);
+            _videoStore.TakeUsersRating(rating, movieName);
+
         }
     }
 }
