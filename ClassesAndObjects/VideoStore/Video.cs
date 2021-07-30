@@ -34,8 +34,7 @@ namespace VideoStore
 
         public double AverageRating()
         {
-            //Console.WriteLine(Convert.ToDouble(Enumerable.Range((int)_rating[0], _rating.Count()).Aggregate(0, (a, b) => a + b) / _rating.Count()));
-            return (_rating.Count() / _rating.Aggregate(0.0, (a, b) => a + b))*100;
+            return (_rating.Count() / _rating.Aggregate(0.0, (a, b) => a + b)) * 100;
         }
 
         public bool Available()

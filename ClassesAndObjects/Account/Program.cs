@@ -10,8 +10,8 @@ namespace Account
     {
         private static void Main(string[] args)
         {
-            var MattAcc = new Account("MAtt", 1000.00);
-            var MyAcc = new Account("My Account",0);
+            var MattAcc = new Account("Matt", 1000.00);
+            var MyAcc = new Account("My Account", 0);
 
             Console.WriteLine("Initial state");
             Console.WriteLine(MattAcc);

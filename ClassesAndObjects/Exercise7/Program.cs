@@ -32,8 +32,6 @@ namespace Exercise7
             Console.WriteLine($"Busters father: {Buster.FathersName()}");
             Console.WriteLine($"Coco has same mother as Rocky: {Coco.HasSameMotherAs(Rocky)}");
             Console.ReadKey();
-
-
         }
         public class Dog
         {

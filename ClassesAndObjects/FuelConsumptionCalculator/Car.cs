@@ -2,13 +2,9 @@
 {
     public class Car
     {
-        //private double StartOdo;
-        //private double EndOdo;
         private double Liters;
         public Car(double liters)
         {
-            //StartOdo = startOdo;
-            //EndOdo = endOdo;
             Liters = liters;
         }
 

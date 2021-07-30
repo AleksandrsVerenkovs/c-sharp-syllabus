@@ -11,7 +11,7 @@ namespace EnergyDrinks
         private const int NumberedSurveyed = 12467;
         private const double PurchasedEnergyDrinks = 0.14;
         private const double PreferCitrusDrinks = 0.64;
-        
+
         private static void Main(string[] args)
         {
             var s = new Program();
@@ -29,7 +29,7 @@ namespace EnergyDrinks
             //throw new Exception("Sorry, no code written :(");
         }
 
-       public double CalculatePreferCitrus(int numberSurveyed)
+        public double CalculatePreferCitrus(int numberSurveyed)
         {
             return Math.Floor((numberSurveyed * PurchasedEnergyDrinks) * PreferCitrusDrinks);
             //throw new Exception("Sorry, no code written :(");

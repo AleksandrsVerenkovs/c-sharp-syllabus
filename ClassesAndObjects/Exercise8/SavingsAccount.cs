@@ -21,14 +21,12 @@ namespace Exercise8
         {
             _balance -= amount;
         }
-
         public void Deposit(decimal amount)
         {
             _balance += amount;
         }
         public void MonthlyInterest(double anualInterest)
         {
-            //_balance +=  _balance * ((decimal)anualInterest / 12);
             var monthlyRate = anualInterest / 12;
             _balance = _balance * (decimal)Math.Pow(1.0 + monthlyRate, 4);
         }

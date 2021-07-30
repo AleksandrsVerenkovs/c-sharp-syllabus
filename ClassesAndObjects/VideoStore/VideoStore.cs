@@ -37,7 +37,7 @@ namespace VideoStore
 
         public void ListInventory()
         {
-            foreach(var movie in _movieList)
+            foreach (var movie in _movieList)
             {
                 Console.WriteLine(movie.ToString());
             }

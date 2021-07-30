@@ -34,8 +34,8 @@ namespace Exercise8
 
                 account.MonthlyInterest(interestRate);
             }
-            Console.WriteLine($"Total deposited: {totalDeposit.ToString("C",CultureInfo.CurrentCulture)}");
-            Console.WriteLine($"Total withdrawn: {totalWithdraw.ToString("C",CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Total deposited: {totalDeposit.ToString("C", CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Total withdrawn: {totalWithdraw.ToString("C", CultureInfo.CurrentCulture)}");
             Console.WriteLine($"Interest earned: {(account.Balance - balance).ToString("C", CultureInfo.CurrentCulture)}");
             Console.WriteLine($"Ending balance: {account.Balance.ToString("C", CultureInfo.CurrentCulture)}");
         }
