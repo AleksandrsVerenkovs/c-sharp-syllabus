@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise2
 {
@@ -10,36 +7,17 @@ namespace Exercise2
     {
         private static void Main(string[] args)
         {
-            var mySet = new HashSet<string>();
-
-            //TODO: add 5 values to Set.
-            mySet.Add("Red");
-            mySet.Add("Black");
-            mySet.Add("Yellow");
-            //..
-
-            Console.WriteLine("Should have 5 elements: ");
-            Console.WriteLine(string.Join(",", mySet)); //Pay attention on order!
-
-            //TODO: iterate through all elements in set
-            /*
-            for (...) 
+            var enteredName = "fdf";
+            var nameHashset = new HashSet<string>();
+            do
             {
-                Console.WriteLine(element);
+                Console.Write("Enter name: ");
+                enteredName = Console.ReadLine();
+                nameHashset.Add(enteredName);
             }
-            */
-
-            //TODO: remove all values from set
-            Console.WriteLine("Is mySet empty: ");
-            Console.WriteLine(mySet.Count == 0);
-
-            //TODO: check if it is possible to add duplicated values
-            mySet.Add("Green");
-            mySet.Add("Orange");
-            mySet.Add("Green");
-            mySet.Add("Purple");
-
-            Console.WriteLine(string.Join(",", mySet));
+            while (enteredName != "");
+            Console.WriteLine($"Unique name list contains: {string.Join(" ", nameHashset)}");
+            Console.ReadLine();
         }
     }
 }
