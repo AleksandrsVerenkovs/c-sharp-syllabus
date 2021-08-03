@@ -22,11 +22,46 @@ namespace Exercise1
         {
             string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
 
-            //todo - replace array with an List and print out the results
+            var carList = array.ToList();
+            foreach (var car in carList)
+            {
+                Console.WriteLine($"{car} -> {Country(car)}");
+            }
 
-            //todo - replace array with a HashSet and print out the results
+            Console.WriteLine();
 
-            //todo - replace array with a Dictionary (use brand as key and origination as value) and print out the results
+            var carHash = new HashSet<string>(array);
+            foreach (var car in carHash)
+            {
+                Console.WriteLine($"{car} -> {Country(car)}");
+            }
+
+            Console.WriteLine();
+
+            var carDictionary = carHash.ToDictionary(key => key, value => Country(value));
+            foreach (var car in carDictionary)
+            {
+                Console.WriteLine($"{car.Key} -> {car.Value}");
+            }
+
+            Console.ReadLine();
+        }
+        public static string Country(string car)
+        {
+            var country = "";
+            if (car == "Tesla")
+            {
+                country = "USA";
+            }
+            else if (car == "Honda")
+            {
+                country = "Japan";
+            }
+            else
+            {
+                country = "Germany";
+            }
+            return country;
         }
     }
 }

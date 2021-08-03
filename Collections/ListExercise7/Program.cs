@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListExercise7
 {
@@ -19,15 +16,10 @@ namespace ListExercise7
                 "Black"
             };
 
-            //      TODO: Check if list contains "White" element
-            //        if (...) 
-            //        {
-            //            Console.WriteLine("Found the element");
-            //        } 
-            //        else 
-            //        {
-            //            Console.WriteLine("There is no such element");
-            //        }
+            var cont = "White";
+            var result = colors.Contains(cont) ? "Found element" : "There is no such element";
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }
