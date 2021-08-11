@@ -22,9 +22,16 @@ namespace AdApp
             return campaign.Sum(item => item.Cost());
         }
 
+        public string GetAds()
+        {
+            var adList = new List<string>();
+            campaign.ForEach(ad => adList.Add(ad.ToString()));
+            return string.Join("\n", adList);
+        }
+
         public override string ToString()
         {
-            return "Advert Campaign" + campaign + "\nTotal Cost = "+ GetCost();
+            return "Advert Campaign\n" + GetAds() + "\n\nTotal Cost = "+ GetCost();
         }
     }
 }
