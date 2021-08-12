@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CozaLozaWoza
 {
@@ -6,17 +8,21 @@ namespace CozaLozaWoza
     {
         static void Main(string[] args)
         {
-            for(var i = 1;i <= 110; i++)
+            for (var i = 1; i <= 110; i++)
             {
                 if (i % 11 == 0 && i % 3 == 0)
                 {
-                    Console.WriteLine("Coza ");
+                    Console.Write("Coza\n");
                 }
                 else if (i % 11 == 0)
                 {
-                    Console.WriteLine(i);
+                    Console.Write($"{i}\n");
                 }
-                else if (i % 15 == 0 || i % 21 == 0)
+                else if (i % 21 == 0)
+                {
+                    Console.Write("CozaWoza ");
+                }
+                else if (i % 15 == 0)
                 {
                     Console.Write("CozaLoza ");
                 }
@@ -37,6 +43,50 @@ namespace CozaLozaWoza
                     Console.Write($"{i} ");
                 }
 
+            }
+        }
+
+    }
+    public class CozaLoza
+    {
+        public static List<string> PrintPattern()
+        {
+            var arr = Enumerable.Range(1, 110).Select(num => NameOrNumber(num)).ToList();
+            return arr;
+        }
+        public static string NameOrNumber(int num)
+        {
+            if (num % 11 == 0 && num % 3 == 0)
+            {
+                return "Coza\n";
+            }
+            else if (num % 11 == 0)
+            {
+                return $"{num}\n";
+            }
+            else if (num % 21 == 0)
+            {
+                return "CozaWoza ";
+            }
+            else if (num % 15 == 0)
+            {
+                return "CozaLoza ";
+            }
+            else if (num % 7 == 0)
+            {
+                return "Woza ";
+            }
+            else if (num % 5 == 0)
+            {
+                return "Loza ";
+            }
+            else if (num % 3 == 0)
+            {
+                return "Coza ";
+            }
+            else
+            {
+                return $"{num} ";
             }
         }
     }
