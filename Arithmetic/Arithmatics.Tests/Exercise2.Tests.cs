@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Arithmatics.Tests
 {
-    public class IsEvenTests
+    public class Exercise2_Tests
     {
         [Theory]
         [InlineData(2, "Even Number")]
