@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Arithmatics.Tests
 {
-    public class NameOrNumberTests
+    public class Exercise6_Tests
     {
         [Theory]
         [InlineData(1,"1 ")]
@@ -87,10 +87,6 @@ namespace Arithmatics.Tests
             Assert.Equal(expected, actual);
         }
 
-    }
-
-    public class PrintPatternTests
-    {
         [Fact]
         public void PrintPattern_ListLengthIs110()
         {
@@ -106,7 +102,7 @@ namespace Arithmatics.Tests
             var expected = 10;
             var actual = CozaLoza.PrintPattern().Where(i => i.Contains("\n")).ToList().Count;
 
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
     }
 }
