@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -21,8 +21,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Arithmetic_exercise_6\CozaLozaWoza.csproj" />
+    <ProjectReference Include="..\Arithmetic_exercise_8\Arithmetic_exercise_8.csproj" />
     <ProjectReference Include="..\CheckOddEven\CheckOddEven.csproj" />
     <ProjectReference Include="..\Exercise_1\Exercise_1.csproj" />
+    <ProjectReference Include="..\GravityCalculator\GravityCalculator.csproj" />
   </ItemGroup>
 
 </Project>
