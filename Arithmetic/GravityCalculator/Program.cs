@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 
 namespace GravityCalculator
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -14,6 +13,11 @@ namespace GravityCalculator
             double finalPosition = 0.5 * Math.Abs(gravity)* Math.Pow(fallingTime,2)+initialVelocity*fallingTime + initialPosition;
             Console.WriteLine("The object's position after " + fallingTime + " seconds is " + finalPosition + " m.");
             Console.ReadKey();
+        }
+        public static double FinalPosition(double initVelocity, double fallingTime, double initPosition)
+        {
+            double gravity = -9.81;
+            return (0.5 * Math.Abs(gravity) * Math.Pow(fallingTime, 2) + initVelocity * fallingTime + initPosition)*-1;
         }
     }
 }
