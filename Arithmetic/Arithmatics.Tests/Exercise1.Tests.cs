@@ -3,7 +3,7 @@ using Xunit;
 using Exercise_1;
 namespace Arithmatics.Tests
 {
-    public class CompareTest
+    public class Exercise1_Tests
     {
         [Theory]
         [InlineData(15,0,true)]
