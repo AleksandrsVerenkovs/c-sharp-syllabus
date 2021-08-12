@@ -6,20 +6,26 @@ namespace CheckOddEven
     {
         static void Main(string[] args)
         {
-            int Number;
             Console.WriteLine("Enter INTEGER nr.");
-            Number = int.Parse(Console.ReadLine());
-            Console.WriteLine(OddOrEven(Number));
+            var number = int.Parse(Console.ReadLine());
+            Console.WriteLine(IsEven.OddOrEven(number));
             Console.WriteLine("\nbye!");
             return;
         }
+    }
+    public class IsEven
+    {
         public static string OddOrEven(int number)
         {
-            if(number == 0)
+            if (number == 0)
             {
                 return "Odd Number";
             }
-            return number % 2 == 0 ? "Even Number" : "Odd Number"; 
+            return Math.Abs(number) % 2 == 0 ? "Even Number" : "Odd Number";
+        }
+        public static string FullMessage(int number)
+        {
+            return $"{OddOrEven(number)}\nbye!";
         }
     }
 }
