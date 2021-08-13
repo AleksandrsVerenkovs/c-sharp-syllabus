@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculateArea
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -15,21 +15,21 @@ namespace CalculateArea
             do
             {
                 // Get the user's menu choice.
-                choice = getMenu();
+                choice = GetMenu();
 
                 if (choice == 1)
                 {
-                    calculateCircleArea();
+                    CalculateCircleArea();
                     Console.ReadKey();
                 }
                 else if (choice == 2)
                 {
-                    calculateRectangleArea();
+                    CalculateRectangleArea();
                     Console.ReadKey();
                 }
                 else if (choice == 3)
                 {
-                    calculateTriangleArea();
+                    CalculateTriangleArea();
                     Console.ReadKey();
                 }
                 else if (choice == 4)
@@ -41,9 +41,8 @@ namespace CalculateArea
             } while (choice != 4);
         }
 
-        public static int getMenu()
+        public static int GetMenu()
         {
-
             int userChoice;
 
             // keyboard input
@@ -62,15 +61,15 @@ namespace CalculateArea
             // validate input
             while (userChoice < 1 || userChoice > 4)
             {
-                Console.WriteLine("Please enter a valid range: 1, 2, 3, or 4: ");
+                Console.WriteLine("\nPlease enter a valid range: 1, 2, 3, or 4: ");
                 keyboard = Console.ReadKey();
-                userChoice = keyboard.KeyChar;
+                int.TryParse(keyboard.KeyChar.ToString(), out userChoice);
             }
 
             return userChoice;
         }
 
-        public static void calculateCircleArea()
+        public static void CalculateCircleArea()
         {
             decimal radius;
 
@@ -85,7 +84,7 @@ namespace CalculateArea
                     + Geometry.areaOfCircle(radius));
         }
 
-        public static void calculateRectangleArea()
+        public static void CalculateRectangleArea()
         {
             decimal length;
             decimal width;
@@ -108,10 +107,10 @@ namespace CalculateArea
 
             // Display output
             Console.WriteLine("The rectangle's area is "
-                    + Geometry.areaOfTriangle(length, width));
+                    + Geometry.areaOfRectangle(length, width));
         }
 
-        public static void calculateTriangleArea()
+        public static void CalculateTriangleArea()
         {
             decimal ground;
             decimal height;
@@ -133,7 +132,7 @@ namespace CalculateArea
 
             // Display the triangle's area.
             Console.WriteLine("The triangle's area is "
-                    + Geometry.areaOfRectangle(ground, height));
+                    + Geometry.areaOfTriangle(ground, height));
         }
     }
 }
