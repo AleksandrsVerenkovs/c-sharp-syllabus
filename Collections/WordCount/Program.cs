@@ -28,7 +28,6 @@ namespace WordCount
         public static int WordCount(string text)
         {
             var regexText = Regex.Replace(text, @"[\n\']|(  )|(, )"," ");
-            //var words = text.Replace("\'", " ").Replace(", ", " ").Replace("  ", " ").Replace("\n", " ").Split(' ').Count();
             var words = regexText.Split(' ').Count();
             return words;
         }

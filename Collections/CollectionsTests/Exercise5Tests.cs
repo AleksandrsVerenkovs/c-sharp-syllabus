@@ -33,6 +33,7 @@ namespace CollectionsTests
         [InlineData("this counts as 16", 4)]
         [InlineData("this\n count's as 16", 5)]
         [InlineData("this\n count's as  16", 5)]
+        [InlineData("this\n count's, as  16", 5)]
 
         public void WordCount_ReturNumOfWord(string text, int expected)
         {
