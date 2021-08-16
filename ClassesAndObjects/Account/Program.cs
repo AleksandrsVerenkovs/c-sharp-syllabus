@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Account
 {
-    class Program
+    public class Program
     {
         private static void Main(string[] args)
         {
-            var MattAcc = new Account("Matt", 1000.00);
+            var MattAcc = new Account("Matt", 1000.00M);
             var MyAcc = new Account("My Account", 0);
 
             Console.WriteLine("Initial state");
@@ -19,9 +19,9 @@ namespace Account
             Console.ReadKey();
         }
 
-        public static void Transfer(Account from, Account to, double howMuch)
+        public static void Transfer(Account from, Account to, decimal howMuch)
         {
-            to.deposit(from.withdrawal(howMuch));
+            to.Deposit(from.Withdrawal(howMuch));
         }
     }
 }
