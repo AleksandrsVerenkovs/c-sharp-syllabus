@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace WordCount
 {
@@ -26,8 +27,9 @@ namespace WordCount
 
         public static int WordCount(string text)
         {
-
-            var words = text.Replace("\'", " ").Replace(", ", " ").Replace("  ", " ").Replace("\n", " ").Split(' ').Count();
+            var regexText = Regex.Replace(text, @"[\n\']|(  )|(, )"," ");
+            //var words = text.Replace("\'", " ").Replace(", ", " ").Replace("  ", " ").Replace("\n", " ").Split(' ').Count();
+            var words = regexText.Split(' ').Count();
             return words;
         }
 
