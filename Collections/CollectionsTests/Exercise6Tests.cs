@@ -11,10 +11,13 @@ namespace CollectionsTests
 {
     public class TestDataGenerator : IEnumerable<object[]>
     {
+        //šis nāk no interfeisa.
         public IEnumerator<object[]> GetEnumerator()
         {
+            // šo nemaina
             yield return new object[]
             {
+                // input parametrs testa metodei.
                 new[]
                 {
                     "b -> dest1",
@@ -35,6 +38,7 @@ namespace CollectionsTests
             };
         }
 
+        //šis nāk no interfeisa
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
