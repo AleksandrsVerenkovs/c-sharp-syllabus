@@ -9,13 +9,20 @@ namespace CollectionsTests
 {
     public class TestDataGenerator : IEnumerable<object[]>
     {
-
-        public IEnumerator<string[]> GetStr()
+        public IEnumerator<object[]> GetEnumerator()
         {
-            yield return (string[])(new object[] { new string[] { "b -> dest1", "c-> dest2", "d -> dest3", "b -> dest4" } });
+            yield return new object[]
+            {
+                new[]
+                {
+                    "b -> dest1",
+                    "c-> dest2",
+                    "d -> dest3",
+                    "b -> dest4"
+                }
+            };
         }
-        IEnumerator IEnumerable.GetStr() => GetStr();
-
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
     public class Exercise6Tests
     {
@@ -37,7 +44,15 @@ namespace CollectionsTests
         public void CityDictionary_ReturnDictionary(string[] baseInfo)
         {
             var cityCreator = new Cities();
+            var expected = new Dictionary<string, List<string>>()
+            {
+                {"b",new List<string>(){"dest1","dest4" } },
+                {"c",new List<string>(){"dest2" } },
+                {"d",new List<string>(){"dest3" } }
+            };
+            var actual = cityCreator.CityDictionary(baseInfo);
 
+            Assert.Equal(expected,actual);
 
         }
 
