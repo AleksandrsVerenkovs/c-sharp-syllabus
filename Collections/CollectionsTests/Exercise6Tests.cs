@@ -23,9 +23,10 @@ namespace CollectionsTests
             };
         }
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
     }
     public class Exercise6Tests
-    {
+        private readonly ITestOutputHelper _testOutputHelper;
         Cities cityCreator = new Cities();
 
         [Theory]
@@ -43,7 +44,6 @@ namespace CollectionsTests
         [ClassData(typeof(TestDataGenerator))]
         public void CityDictionary_ReturnDictionary(string[] baseInfo)
         {
-            var cityCreator = new Cities();
             var expected = new Dictionary<string, List<string>>()
             {
                 {"b",new List<string>(){"dest1","dest4" } },
@@ -53,6 +53,7 @@ namespace CollectionsTests
             var actual = cityCreator.CityDictionary(baseInfo);
 
             Assert.Equal(expected,actual);
+
 
         }
 
