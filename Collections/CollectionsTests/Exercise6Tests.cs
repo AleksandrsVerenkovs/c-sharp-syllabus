@@ -23,10 +23,9 @@ namespace CollectionsTests
             };
         }
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
     }
     public class Exercise6Tests
-        private readonly ITestOutputHelper _testOutputHelper;
+    {
         Cities cityCreator = new Cities();
 
         [Theory]
@@ -52,11 +51,7 @@ namespace CollectionsTests
             };
             var actual = cityCreator.CityDictionary(baseInfo);
 
-            Assert.Equal(expected,actual);
-
-
+            Assert.Equal(expected, actual);
         }
-
-
     }
 }
