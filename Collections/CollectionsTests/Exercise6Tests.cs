@@ -3,9 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using FlightPlanner;
+using System.Collections;
 
 namespace CollectionsTests
 {
+    public class TestDataGenerator : IEnumerable<object[]>
+    {
+
+        public IEnumerator<string[]> GetStr()
+        {
+            yield return (string[])(new object[] { new string[] { "b -> dest1", "c-> dest2", "d -> dest3", "b -> dest4" } });
+        }
+        IEnumerator IEnumerable.GetStr() => GetStr();
+
+    }
     public class Exercise6Tests
     {
         Cities cityCreator = new Cities();
@@ -21,17 +32,14 @@ namespace CollectionsTests
             Assert.Equal(expected, actual);
         }
 
-        //[Theory]
-        //[InlineData(
-        //    new string[] { "b -> dest1", "c-> dest2", "d -> dest3", "b -> dest4" },
-        //    new Dictionary<string, List<string>>() {
-        //        {"b",new List<string>(){"dest1","dest4" } }
-        //    })]
-        //public void CityDictionary_ReturnDictionary(string[] baseInfo, Dictionary<string, List<string>> expected)
-        //{
-        //    var cityCreator = new Cities();
+        [Theory]
+        [ClassData(typeof(TestDataGenerator))]
+        public void CityDictionary_ReturnDictionary(string[] baseInfo)
+        {
+            var cityCreator = new Cities();
 
-        //}
+
+        }
 
 
     }
