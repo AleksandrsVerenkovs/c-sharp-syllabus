@@ -2,11 +2,11 @@
 
 namespace MakeSounds
 {
-    class Radio:ISound
+    public class Radio:ISound
     {
-        public void PlaySound()
+        public string PlaySound()
         {
-            Console.WriteLine("smooth-radio-voice");
+            return "smooth-radio-voice";
         }
     }
 }
