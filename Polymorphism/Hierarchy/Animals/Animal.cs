@@ -14,12 +14,12 @@
             AnimalWeight = animalWeight;
         }
 
-        public abstract void MakeSound();
+        public abstract string MakeSound();
         public abstract void Eat(Food.Food food);
 
         public override string ToString()
         {
-            return $"{AnimalType} [{AnimalName}, {AnimalWeight:00}";
+            return $"{AnimalType} [{AnimalName}, {AnimalWeight.ToString("F")}";
         }
     }
 }

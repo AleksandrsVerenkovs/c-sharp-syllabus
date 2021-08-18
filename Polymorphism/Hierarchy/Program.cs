@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Hierarchy
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -12,7 +12,7 @@ namespace Hierarchy
             Console.ReadKey();
         }
 
-        private static void AnimalLoop()
+        public static void AnimalLoop()
         {
             var animalList = new List<string>();
 
@@ -29,7 +29,7 @@ namespace Hierarchy
                     return;
                 }
                 var animal = FilterAnimal(input);
-                animal.MakeSound();
+                Console.WriteLine(animal.MakeSound());
                 var foodGiven = FeedAnimal();
                 animal.Eat(foodGiven);
                 animalList.Add(animal.ToString());
@@ -37,7 +37,7 @@ namespace Hierarchy
             } while (true);
         }
 
-        private static Animals.Animal FilterAnimal(List<string> animal)
+        public static Animals.Animal FilterAnimal(List<string> animal)
         {
             var type = animal[0];
             var name = animal[1];
@@ -60,7 +60,7 @@ namespace Hierarchy
             }
         }
 
-        private static Food.Food FeedAnimal()
+        public static Food.Food FeedAnimal()
         {
             Console.WriteLine("Feed animal: [Vegetable/Meat Amount]");
             var input = Console.ReadLine().Split().Where(line => line != string.Empty).ToList();
