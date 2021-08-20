@@ -65,20 +65,23 @@ namespace PolymorphismTests
 
         [Theory]
         [MemberData(nameof(AnimalData))]
-        public void ToString_ReturnBaseInfo(Animal a, string expected)
+        public void ToString__ReceiveBaseInfo_ReturnBaseInfoString(Animal a, string expected)
         {
+            //Act
             var actual = a.ToString();
-
+            //Assert
             Assert.Equal(expected, actual);
         }
 
         [Theory]
         [MemberData(nameof(CreateAnimalData))]
-        public void FilterAnimal_CreateAnimalClass(string type, string name, string weight, string region, string? bread , Mammal expected)
+        public void FilterAnimal_ReceiveAnimalInfo_CreateAnimalClass(string type, string name, string weight, string region, string? bread , Mammal expected)
         {
+            //Act
             var list = new List<string>() { type, name, weight, region, bread };
             var actual = Hierarchy.Program.FilterAnimal(list);
 
+            //Assert
             Assert.Equal(expected.AnimalName, actual.AnimalName);
             Assert.Equal(expected.AnimalType, actual.AnimalType);
             Assert.Equal(expected.AnimalWeight, actual.AnimalWeight);
@@ -86,40 +89,52 @@ namespace PolymorphismTests
 
         [Theory]
         [MemberData(nameof(AnimalFedMeat))]
-        public void Eat_AnimalsFedMeat(Animal a, string expected)
+        public void Eat_InputMeat_AnimalsFedMeat(Animal a, string expected)
         {
+            //Arrange
             var giveMeat = new Meat(2);
+
+            //Act
             a.Eat(giveMeat);
             var actual = a.ToString();
 
+            //Assert
             Assert.Equal(expected, actual);
         }
 
         [Theory]
         [MemberData(nameof(AnimalFedVegetable))]
-        public void Eat_AnimalsFedVegetable(Animal a, string expected)
+        public void Eat_InputVegetables_AnimalsFedVegetable(Animal a, string expected)
         {
+            //Arrange
             var giveMeat = new Vegetable(5);
+
+            //Act
             a.Eat(giveMeat);
             var actual = a.ToString();
 
+            //Assert
             Assert.Equal(expected, actual);
         }
         [Theory]
         [MemberData(nameof(AnimalMakesSound))]
-        public void MakeSound_MakesAnimalSound(Animal a, string expected)
+        public void MakeSound_CallSoundMethod_MakesAnimalSound(Animal a, string expected)
         {
+            //Act
             var actual = a.MakeSound();
 
+            //Assert
             Assert.Equal(expected, actual);
         }
 
         [Theory]
         [MemberData(nameof(FoodAmount))]
-        public void Food_Add5ToMeatOrVegetable(Food a, int expected)
+        public void Food_Give5Food_Add5ToMeatOrVegetable(Food a, int expected)
         {
+            //Act
             var actual = a.FoodAmount;
 
+            //Assert
             Assert.Equal(expected, actual);
         }
     }

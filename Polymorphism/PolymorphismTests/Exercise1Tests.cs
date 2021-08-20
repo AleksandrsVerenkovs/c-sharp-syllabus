@@ -21,8 +21,10 @@ namespace PolymorphismTests
         [MemberData(nameof(Data))]
         public void PlaySound_CallParrot_ReceiveCorrectSound(ISound a, string expected)
         {
+            //Act
             var actual = a.PlaySound();
 
+            //Assert
             Assert.Equal(expected,actual);
         }
 
