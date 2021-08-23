@@ -2,11 +2,11 @@
 
 namespace MakeSounds
 {
-    class Parrot:ISound
+    public class Parrot:ISound
     {
-        public void PlaySound()
+        public string PlaySound()
         {
-            Console.WriteLine("rhee-rheee");
+            return "rhee-rheee";
         }
     }
 }

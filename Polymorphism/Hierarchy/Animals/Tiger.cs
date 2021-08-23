@@ -14,12 +14,13 @@ namespace Hierarchy.Animals
             if (food.GetType().Name == "Vegetable")
             {
                 Console.WriteLine($"{this.GetType().Name}s are not eating that type of food!");
+                return;
             }
             FoodEaten += food.FoodAmount;
         }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("ROARR!!!");
+            return "ROARR!!!";
         }
         public override string ToString()
         {

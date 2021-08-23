@@ -5,7 +5,7 @@ namespace Hierarchy.Animals
     public class Cat : Felime
     {
         private string _breed;
-        public Cat(string animalType, string animalName, double animalWeight,string livingRegion, string breed) : base(animalName, animalType, animalWeight, livingRegion)
+        public Cat(string animalType, string animalName, double animalWeight,string livingRegion, string breed) : base(animalType, animalName, animalWeight, livingRegion)
         {
             _breed = breed;
         }
@@ -13,13 +13,13 @@ namespace Hierarchy.Animals
         {
             FoodEaten += food.FoodAmount;
         }
-        public override void MakeSound()
+        public override string MakeSound()
         {
-            Console.WriteLine("Meowwww");
+            return "Meowwww";
         }
         public override string ToString()
         {
-            return $"{AnimalType} [{AnimalName}, {_breed}, {AnimalWeight}, {Region}, {FoodEaten}]";
+            return $"{AnimalType} [{AnimalName}, {_breed}, {AnimalWeight.ToString("F")}, {Region}, {FoodEaten}]";
         }
     }
 }
