@@ -9,45 +9,48 @@ namespace CollectionsTests
     public class Exercise8Tests
     {
         [Fact]
-        public void GetNumber_ReturnErrorMsg()
+        public void GetNumber_ProvideName_ReturnErrorMsg()
         {
+            //Arrange
             var newPhoneBook = new PhoneDirectory();
             newPhoneBook.PutNumber("Matt", "3565460");
             newPhoneBook.PutNumber("Rick", "3565460");
             newPhoneBook.PutNumber("Annabell", "3565460");
-
+            //Act
             var expected = "Number wasn't found";
             var actual = newPhoneBook.GetNumber("Gabriel");
-
+            //Assert
             Assert.Equal(actual,expected);
         }
 
         [Fact]
-        public void GetNumber_ReturnsNumber()
+        public void GetNumber_ProvideName_ReturnsNumber()
         {
+            //Arrange
             var newPhoneBook = new PhoneDirectory();
             newPhoneBook.PutNumber("Matt", "3565460");
             newPhoneBook.PutNumber("Rick", "3565460");
             newPhoneBook.PutNumber("Annabell", "1234");
-
+            //Act
             var expected = "1234";
             var actual = newPhoneBook.GetNumber("Annabell");
-
+            //Assert
             Assert.Equal(actual, expected);
         }
 
         [Fact]
-        public void PutNumber_OverwritesOldNumber()
+        public void PutNumber_SameNameNewNumber_OverwritesOldNumber()
         {
+            //Arrange
             var newPhoneBook = new PhoneDirectory();
             newPhoneBook.PutNumber("Matt", "3565460");
             newPhoneBook.PutNumber("Rick", "3565460");
             newPhoneBook.PutNumber("Annabell", "1234");
-
+            //Act
             var expected = "4321";
             newPhoneBook.PutNumber("Annabell","4321");
             var actual = newPhoneBook.GetNumber("Annabell");
-
+            //Assert
             Assert.Equal(actual, expected);
         }
     }
