@@ -41,31 +41,33 @@ namespace ClassAndObjectsTests
 
         [Theory]
         [ClassData(typeof(TestGenerator))]
-        public void ChangePrice_ChangesPriceTo10(Tuple<string, double, int> tuple)
+        public void ChangePrice_ProvideNewPrice10_ChangesPriceTo10(Tuple<string, double, int> tuple)
         {
+            //Arrange
             var changedValue = 10.00;
-
             var prod = new Exercise1.Program.Product(tuple.Item1, tuple.Item2, tuple.Item3);
+            //Act
             prod.ChangePrice(changedValue);
 
             var expected = $"{tuple.Item1}, price {changedValue}, amount {tuple.Item3}";
             var actual = prod.PrintProduct();
-
+            //Assert
             Assert.Equal(expected, actual);
         }
 
         [Theory]
         [ClassData(typeof(TestGenerator))]
-        public void ChangeAmount_ChangesAmountTo5(Tuple<string, double, int> tuple)
+        public void ChangeAmount_ProvideNewAmount5_ChangesAmountTo5(Tuple<string, double, int> tuple)
         {
+            //Arrange
             var changedValue = 5;
-
             var prod = new Exercise1.Program.Product(tuple.Item1, tuple.Item2, tuple.Item3);
+            //Act
             prod.ChangeAmount(changedValue);
 
             var expected = $"{tuple.Item1}, price {tuple.Item2}, amount {changedValue}";
             var actual = prod.PrintProduct();
-
+            //Assert
             Assert.Equal(expected, actual);
         }
     }
