@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 
 namespace MakeSounds
 {
-    public class Firework: ISound
+    public class Radio:ISound
     {
         public string PlaySound()
         {
-            return "whoosh-bang";
+            return "smooth-radio-voice";
         }
     }
 }
