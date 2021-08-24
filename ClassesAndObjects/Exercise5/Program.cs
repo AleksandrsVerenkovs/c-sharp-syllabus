@@ -2,12 +2,12 @@
 
 namespace Exercise5
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            var testDate = new Date(2, 33, 1993);
-            testDate.DisplayDate();
+            var testDate = new Date(-1, 33, 1993);
+            Console.WriteLine(testDate.DisplayDate());
             Console.ReadKey();
         }
         public class Date
@@ -22,7 +22,7 @@ namespace Exercise5
                 set
                 {
                     int val = int.Parse(value);
-                    _Year = val >= 1 && val <= 31 ? value : 2000.ToString();
+                    _Year = val >= 1 && val <= 31 ? value : 31.ToString();
                 }
             }
             public string Month
@@ -37,7 +37,7 @@ namespace Exercise5
             public string Year
             {
                 get { return _Day; }
-                set { _Day = int.Parse(value) != 0 ? value : 2000.ToString(); }
+                set { _Day = int.Parse(value) > 0 ? value : 2000.ToString(); }
             }
             public Date(int day, int month, int year)
             {
@@ -45,9 +45,9 @@ namespace Exercise5
                 Month = month.ToString();
                 Year = year.ToString();
             }
-            public void DisplayDate()
+            public string DisplayDate()
             {
-                Console.Write($"{Day}/{Month}/{Year}");
+                return $"{Day}/{Month}/{Year}";
             }
         }
     }

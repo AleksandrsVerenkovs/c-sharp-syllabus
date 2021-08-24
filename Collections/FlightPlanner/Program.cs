@@ -7,20 +7,19 @@ using System.Threading.Tasks;
 
 namespace FlightPlanner
 {
-    class Program
+    public class Program
     {
         private const string Path = "../../flights.txt";
 
         private static void Main(string[] args)
         {
+            string[] readText = File.ReadAllLines(Path);
             var cities = new Cities();
+            var cityDictionary = cities.CityDictionary(readText);
             var singleCities = cities.CityList();
-            var cityDictionary = cities.CityDictionary();
             var running = true;
 
             var posInputs = new char[3] { '#', '1', '2' };
-
-            var dic = cityDictionary.Select(city => $"{city.Key}: {string.Join(" ", city.Value)}");
 
             do
             {
@@ -41,6 +40,7 @@ namespace FlightPlanner
                             running = false;
                             break;
                         case '1':
+                            Console.WriteLine("\nAvailable cities:\n");
                             ShowCities(singleCities);
                             Console.WriteLine();
                             break;

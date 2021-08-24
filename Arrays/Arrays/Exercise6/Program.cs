@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Exercise6
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -15,6 +15,11 @@ namespace Exercise6
             Array.Copy(arr1, arr2, arr1.Length);
 
             arr1[arr1.Length - 1] = -7;
+
+            var baseArr = ArrayPopulate.CreateArray(10);
+            var arrCopy = ArrayPopulate.CreateCopy(baseArr);
+            ArrayPopulate.ChangeLastValueTo(arrCopy, -7);
+
 
             Console.WriteLine(string.Join(" ",arr1));
             Console.WriteLine(string.Join(" ", arr2));

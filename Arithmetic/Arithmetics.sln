@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CozaLozaWoza", "Arithmetic_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arithmetic_exercise_8", "Arithmetic_exercise_8\Arithmetic_exercise_8.csproj", "{A982B132-7736-4805-99DB-695A47331F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arithmatic_exercise_9", "Arithmatic_exercise_9\Arithmatic_exercise_9.csproj", "{1DCA723D-F460-4203-B662-B74B887A7D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arithmatic_exercise_9", "Arithmatic_exercise_9\Arithmatic_exercise_9.csproj", "{1DCA723D-F460-4203-B662-B74B887A7D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arithmatics.Tests", "Arithmatics.Tests\Arithmatics.Tests.csproj", "{AC13CBEC-6A80-4B4C-86B8-A90808787780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{1DCA723D-F460-4203-B662-B74B887A7D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DCA723D-F460-4203-B662-B74B887A7D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DCA723D-F460-4203-B662-B74B887A7D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC13CBEC-6A80-4B4C-86B8-A90808787780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC13CBEC-6A80-4B4C-86B8-A90808787780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC13CBEC-6A80-4B4C-86B8-A90808787780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC13CBEC-6A80-4B4C-86B8-A90808787780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

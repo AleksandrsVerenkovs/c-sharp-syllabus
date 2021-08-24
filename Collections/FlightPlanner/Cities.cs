@@ -1,58 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace FlightPlanner
 {
 
     public class Cities
     {
-        private const string Path = "../../flights.txt";
-        private string[] readText = File.ReadAllLines(Path);
         private List<List<string>> _cityPairs;
+        private Dictionary<string, List<string>> _dict;
+        private HashSet<string> _singleCities;
 
         public Cities()
         {
+            _dict = new Dictionary<string, List<string>>();
             _cityPairs = new List<List<string>>();
+            _singleCities = new HashSet<string>();
         }
+
         public HashSet<string> CityList()
         {
-            var singleCities = new HashSet<string>();
-
-            foreach (var s in readText)
+            foreach(KeyValuePair<string,List<string>> city in _dict)
             {
-                var line = s.Split(new string[] { ">", "-" }, StringSplitOptions.RemoveEmptyEntries);
-                var arrPair = new List<string>();
-
-                foreach (var i in line)
-                {
-                    singleCities.Add(i.Trim());
-                    arrPair.Add(i.Trim());
-                }
-                _cityPairs.Add(arrPair);
+                _singleCities.Add(city.Key);
             }
-            return singleCities;
+            return _singleCities;
         }
-        public Dictionary<string, List<string>> CityDictionary()
-        {
-            var cityDictionary = new Dictionary<string, List<string>>();
 
-            //Create Dictionary of flight paths
-            for (var j = 0; j < _cityPairs.Count; j++)
+        public void CityPairs(string[] baseInfo)
+        {
+            foreach (var pair in baseInfo)
             {
-                if (!cityDictionary.ContainsKey(_cityPairs[j][0]))
+                var cityPair = pair.Split(new string[] { "->" }, StringSplitOptions.RemoveEmptyEntries);
+                var start = cityPair[0].Trim();
+                var dest = cityPair[1].Trim();
+                if (_dict.ContainsKey(start))
                 {
-                    cityDictionary.Add(key: _cityPairs[j][0], value: new List<string>() { _cityPairs[j][1]});
+                    _dict[start].Add(dest);
                 }
                 else
                 {
-                    cityDictionary[_cityPairs[j][0]].Add(_cityPairs[j][1]);
+                    _dict.Add(start, new List<string> { dest });
                 }
             }
-            return cityDictionary;
+
+        }
+        
+        public Dictionary<string, List<string>> CityDictionary(string[] baseInfo)
+        {
+            CityPairs(baseInfo);
+            
+            return _dict;
         }
     }
 }

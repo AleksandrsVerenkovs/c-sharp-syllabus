@@ -1,28 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace WordCount
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             var fileText = File.ReadAllText("../../lear.txt");
-            var lines = fileText.Split('\n').Count();
-            var words = fileText.Split(new string[] { "\'", " ","," }, StringSplitOptions.RemoveEmptyEntries);
-            var chars = fileText.Count();
-
+            var lines = LineCount(fileText);
+            var words = WordCount(fileText);
+            var chars = CharCount(fileText);
 
             Console.WriteLine($"Lines = {lines}");
-            Console.WriteLine($"Words = {fileText.Split(new string[] {"\'"," ","," },StringSplitOptions.RemoveEmptyEntries).Count()}");
+            Console.WriteLine($"Words = {words}");
             Console.WriteLine($"Chars = {chars}");
-
-
             Console.ReadLine();
+        }
+        public static int LineCount(string text)
+        {
+            var lines = text.Split('\n').Count();
+            return lines;
+        }
+
+        public static int WordCount(string text)
+        {
+            var regexText = Regex.Replace(text, @"[\n\']|(  )|(, )"," ");
+            var words = regexText.Split(' ').Count();
+            return words;
+        }
+
+        public static int CharCount(string text)
+        {
+            var chars = text.Count();
+            return chars;
         }
     }
 }
