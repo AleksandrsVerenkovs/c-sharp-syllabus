@@ -24,7 +24,7 @@ namespace ClassAndObjectsTests
         [Theory]
         [InlineData(12.00, 12.00, 24.00)]
         [InlineData(0.00, 12.00, 12.00)]
-        public void Deposit_ProvideAmount_AddToAccount(decimal initial,decimal money, decimal expected)
+        public void Deposit_ValidAmount_AddToAccount(decimal initial,decimal money, decimal expected)
         {
             //Arrange
             var personAcc = new Account.Account("Matt", initial);
