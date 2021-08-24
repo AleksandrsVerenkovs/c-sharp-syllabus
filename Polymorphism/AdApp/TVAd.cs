@@ -1,19 +1,30 @@
 namespace AdApp
 {
-    public class TVAd: Advert
+    public class TVAd : Advert
     {
-        public TVAd(int fee) : base(fee)
+        private int peakTime;
+        private int _seconds;
+        private int peakTimeRate;
+        public TVAd(int fee, int totalTimeSec, int peakTimeSec = 0) : base(fee)
         {
-        }
-        
-        public new int Cost() 
-        {
-            return base.Cost();
+            _seconds = totalTimeSec;
+            peakTime = peakTimeSec;
+            peakTimeRate = 2;
         }
 
-        public override string ToString() 
+        public new int Cost()
         {
-            return base.ToString();
+            var fee = base.Cost() * _seconds - peakTime;
+            if (peakTime > 0)
+            {
+                fee += base.Cost() * peakTime * peakTimeRate;
+            }
+            return fee;
+        }
+
+        public override string ToString()
+        {
+            return "\nTVAd: Fee=" + Cost();
         }
     }
 }
